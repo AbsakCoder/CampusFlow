@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFlow - My Bookings</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F3864'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='34' fill='white'%3ECF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/booking.css" />
+</head>
+<body id="myBookingsPage">
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">CampusFlow<small>Smart Campus Resource & Facility Manager</small></div>
+      <button id="hamburgerBtn" class="hamburger">Menu</button>
+      <div id="navLinks" class="nav-links">
+        <a class="nav-link" href="index.html">Book</a>
+        <a class="nav-link active" href="my_bookings.html">My Bookings</a>
+      </div>
+      <div class="navbar-right"><span id="roleBadge" class="role-badge">Role</span><button class="btn btn-danger" onclick="logout()">Logout</button></div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title mb-4">My Bookings</h1>
+    <div class="tab-row"><button id="tabUpcoming" class="tab-btn active">Upcoming</button><button id="tabPast" class="tab-btn">Past</button></div>
+    <div class="table-wrap"><table><thead><tr><th>Booking ID</th><th>Room</th><th>Date</th><th>Time</th><th>Purpose</th><th>Status</th><th>Action</th></tr></thead><tbody id="myBookingBody"></tbody></table></div>
+  </main>
+
+  <div id="cancelBookingModal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('cancelBookingModal')">x</button><h3 class="card-title">Cancel Booking</h3><p>Are you sure you want to cancel booking <strong id="cancelBookingId"></strong>?</p><div class="mt-4 flex gap-3"><button class="btn btn-light" onclick="closeModal('cancelBookingModal')">No</button><button id="confirmCancelBtn" class="btn btn-danger">Yes, Cancel</button></div></div></div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/booking.js"></script>
+</body>
+</html>

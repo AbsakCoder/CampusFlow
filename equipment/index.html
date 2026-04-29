@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFlow - Equipment Tracker</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F3864'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='34' fill='white'%3ECF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body id="equipmentPage">
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">CampusFlow<small>Smart Campus Resource & Facility Manager</small></div>
+      <button id="hamburgerBtn" class="hamburger">Menu</button>
+      <div id="navLinks" class="nav-links"><a class="nav-link" href="../dashboard/student.html">Dashboard</a><a class="nav-link active" href="index.html">Equipment</a></div>
+      <div class="navbar-right"><span id="roleBadge" class="role-badge">Role</span><button class="btn btn-danger" onclick="logout()">Logout</button></div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title mb-4">Equipment Tracker</h1>
+    <div class="tab-row mb-3"><button class="tab-btn eq-tab active" data-category="All">All</button><button class="tab-btn eq-tab" data-category="Laptops">Laptops</button><button class="tab-btn eq-tab" data-category="Projectors">Projectors</button><button class="tab-btn eq-tab" data-category="Microscopes">Microscopes</button><button class="tab-btn eq-tab" data-category="Other">Other</button></div>
+    <div class="form-group mb-4"><label for="equipmentSearch">Search</label><input id="equipmentSearch" type="text" placeholder="Search by equipment name" /></div>
+    <section id="equipmentGrid" class="grid-3"></section>
+  </main>
+
+  <div id="equipmentRequestModal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('equipmentRequestModal')">x</button><h3 class="card-title">Request Equipment</h3><form id="equipmentRequestForm" class="grid gap-3 mt-3"><div class="form-group"><label for="eqPurpose">Purpose</label><input id="eqPurpose" type="text" /></div><div class="form-group"><label for="eqRequiredDate">Required Date</label><input id="eqRequiredDate" type="date" /></div><div class="form-group"><label for="eqReturnDate">Return Date</label><input id="eqReturnDate" type="date" /></div><button class="btn btn-success" type="submit">Submit Request</button></form></div></div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/equipment.js"></script>
+</body>
+</html>

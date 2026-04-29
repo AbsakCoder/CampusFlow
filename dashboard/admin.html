@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFlow - Admin Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F3864'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='34' fill='white'%3ECF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">CampusFlow<small>Smart Campus Resource & Facility Manager</small></div>
+      <button id="hamburgerBtn" class="hamburger">Menu</button>
+      <div id="navLinks" class="nav-links">
+        <a class="nav-link" href="../rooms/index.html">Rooms</a>
+        <a class="nav-link" href="../booking/index.html">Bookings</a>
+        <a class="nav-link" href="../timetable/index.html">Timetable</a>
+        <a class="nav-link" href="../equipment/index.html">Equipment</a>
+        <a class="nav-link" href="../lost_found/index.html">Lost & Found</a>
+        <a class="nav-link" href="../events/index.html">Events</a>
+        <a class="nav-link" href="../feedback/index.html">Feedback</a>
+      </div>
+      <div class="navbar-right">
+        <span id="roleBadge" class="role-badge">Admin</span>
+        <button class="btn btn-danger" onclick="logout()">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <button id="sidebarToggle" class="btn btn-secondary mt-3 hidden">Toggle Sidebar</button>
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <a class="active" href="admin.html">Dashboard</a>
+        <a href="../rooms/index.html">Rooms</a>
+        <a href="../booking/index.html">Bookings</a>
+        <a href="../timetable/index.html">Timetable</a>
+        <a href="../equipment/index.html">Equipment</a>
+        <a href="../lost_found/index.html">Lost and Found</a>
+        <a href="../events/index.html">Events</a>
+        <a href="../feedback/index.html">Feedback</a>
+      </aside>
+
+      <section class="main-panel">
+        <h1 class="page-title">Admin Dashboard</h1>
+        <div class="stats-grid" id="adminStats"></div>
+
+        <section class="card">
+          <div class="section-head"><h2 class="card-title">Pending Bookings</h2></div>
+          <div class="table-wrap"><table><thead><tr><th>Room</th><th>Requested By</th><th>Date</th><th>Time</th><th>Purpose</th><th>Status</th><th>Action</th></tr></thead><tbody id="pendingBookingBody"></tbody></table></div>
+        </section>
+
+        <section class="card">
+          <div class="section-head"><h2 class="card-title">Recent Facility Issues</h2></div>
+          <div class="table-wrap"><table><thead><tr><th>Location</th><th>Issue Type</th><th>Reported</th><th>Status</th><th>Action</th></tr></thead><tbody id="facilityIssueBody"></tbody></table></div>
+        </section>
+
+        <section class="card">
+          <div class="section-head"><h2 class="card-title">Equipment Requests</h2></div>
+          <div class="table-wrap"><table><thead><tr><th>Item</th><th>Requested By</th><th>Purpose</th><th>Date</th><th>Action</th></tr></thead><tbody id="equipmentRequestBody"></tbody></table></div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

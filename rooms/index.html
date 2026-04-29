@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFlow - Room Availability</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F3864'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='34' fill='white'%3ECF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/rooms.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">CampusFlow<small>Smart Campus Resource & Facility Manager</small></div>
+      <button id="hamburgerBtn" class="hamburger">Menu</button>
+      <div id="navLinks" class="nav-links">
+        <a class="nav-link" href="../dashboard/admin.html">Dashboard</a>
+        <a class="nav-link active" href="index.html">Rooms</a>
+        <a class="nav-link" href="../booking/index.html">Bookings</a>
+        <a class="nav-link" href="../equipment/index.html">Equipment</a>
+        <a class="nav-link" href="../events/index.html">Events</a>
+      </div>
+      <div class="navbar-right"><span id="roleBadge" class="role-badge">Role</span><button class="btn btn-danger" onclick="logout()">Logout</button></div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title mb-4">Room Availability Dashboard</h1>
+
+    <section class="filters-bar">
+      <div class="filters-grid">
+        <div class="form-group"><label for="filterBlock">Block</label><select id="filterBlock"><option>All</option><option>CSIT Block</option><option>K.P. Nautiyal Block</option></select></div>
+        <div class="form-group"><label for="filterType">Room Type</label><select id="filterType"><option>All</option><option>Classroom</option><option>Lab</option><option>Lecture Theatre</option><option>Seminar Hall</option></select></div>
+        <div class="form-group"><label for="filterCapacity">Min Capacity</label><input id="filterCapacity" type="number" min="0" placeholder="e.g. 40" /></div>
+        <div class="form-group"><label>Amenities</label><div class="amenity-filters"><label><input type="checkbox" id="amenityAC" /> AC</label><label><input type="checkbox" id="amenityProjector" /> Projector</label><label><input type="checkbox" id="amenityWifi" /> WiFi</label></div></div>
+      </div>
+      <div class="flex gap-3">
+        <button id="applyFilterBtn" class="btn btn-primary">Apply Filter</button>
+        <button id="resetFilterBtn" class="btn btn-light">Reset</button>
+      </div>
+    </section>
+
+    <div class="rooms-header mt-4">
+      <p id="resultCount">Showing 41 free rooms out of 41</p>
+      <p id="refreshCountdown" class="refresh-countdown">Refreshing in 60s</p>
+    </div>
+
+    <section id="roomGrid" class="room-grid"></section>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/rooms.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFlow - Lost and Found</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F3864'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='34' fill='white'%3ECF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body id="lostFoundPage">
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">CampusFlow<small>Smart Campus Resource & Facility Manager</small></div>
+      <button id="hamburgerBtn" class="hamburger">Menu</button>
+      <div id="navLinks" class="nav-links"><a class="nav-link" href="../dashboard/student.html">Dashboard</a><a class="nav-link active" href="index.html">Lost & Found</a></div>
+      <div class="navbar-right"><span id="roleBadge" class="role-badge">Role</span><button class="btn btn-danger" onclick="logout()">Logout</button></div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title mb-4">Lost and Found</h1>
+    <div class="flex-between mb-3"><div class="tab-row"><button id="tabLost" class="tab-btn active">Lost Items</button><button id="tabFound" class="tab-btn">Found Items</button></div><button id="postItemBtn" class="btn btn-primary">Post New Item</button></div>
+    <div class="grid-2 mb-4"><div class="form-group"><label for="lostFoundSearch">Search</label><input id="lostFoundSearch" type="text" placeholder="Search item" /></div><div class="form-group"><label for="lostFoundCategory">Category</label><select id="lostFoundCategory"><option>All</option><option>Phone</option><option>Bag</option><option>ID Card</option><option>Wallet</option><option>Keys</option><option>Laptop</option><option>Other</option></select></div></div>
+    <section id="lostFoundGrid" class="grid-3"></section>
+  </main>
+
+  <div id="contactInfoModal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('contactInfoModal')">x</button><h3 id="contactModalTitle" class="card-title"></h3><p id="contactModalInfo"></p></div></div>
+  <div id="postItemModal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('postItemModal')">x</button><h3 class="card-title">Post New Item</h3><form id="postItemForm" class="grid gap-3 mt-3"><div class="form-group"><label for="itemName">Item Name</label><input id="itemName" type="text" /></div><div class="form-group"><label for="itemCategory">Category</label><select id="itemCategory"><option>Phone</option><option>Bag</option><option>ID Card</option><option>Wallet</option><option>Keys</option><option>Laptop</option><option>Other</option></select></div><div class="form-group"><label for="itemDescription">Description</label><textarea id="itemDescription" rows="3"></textarea></div><div class="form-group"><label for="itemLocation">Location</label><input id="itemLocation" type="text" /></div><div class="form-group"><label for="itemDate">Date</label><input id="itemDate" type="date" /></div><div class="form-group"><label for="itemContact">Contact Info</label><input id="itemContact" type="text" /></div><div class="form-group"><label><input id="itemAnonymous" type="checkbox" /> Post as Anonymous</label></div><div class="form-group"><label for="itemPhoto">Photo Upload</label><input id="itemPhoto" type="file" accept="image/*" /><img id="itemPreview" class="item-preview hidden mt-3" alt="Preview" /></div><button class="btn btn-success" type="submit">Submit</button></form></div></div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/lost_found.js"></script>
+</body>
+</html>

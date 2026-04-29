@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFlow - Student Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F3864'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='34' fill='white'%3ECF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">CampusFlow<small>Smart Campus Resource & Facility Manager</small></div>
+      <button id="hamburgerBtn" class="hamburger">Menu</button>
+      <div id="navLinks" class="nav-links">
+        <a class="nav-link" href="../rooms/index.html">Rooms</a>
+        <a class="nav-link" href="../booking/index.html">Bookings</a>
+        <a class="nav-link" href="../equipment/index.html">Equipment</a>
+        <a class="nav-link" href="../lost_found/index.html">Lost & Found</a>
+        <a class="nav-link" href="../events/index.html">Events</a>
+        <a class="nav-link" href="../feedback/index.html">Feedback</a>
+      </div>
+      <div class="navbar-right"><span id="roleBadge" class="role-badge">Student</span><button class="btn btn-danger" onclick="logout()">Logout</button></div>
+    </div>
+  </nav>
+
+  <main class="container main-panel">
+    <h1 class="page-title">Welcome back, <span id="welcomeName">Student</span></h1>
+
+    <section class="quick-actions" id="studentQuickActions"></section>
+
+    <section class="card">
+      <div class="section-head"><h2 class="card-title">My Upcoming Bookings</h2></div>
+      <div class="table-wrap"><table><thead><tr><th>Booking ID</th><th>Room</th><th>Date</th><th>Time</th><th>Status</th></tr></thead><tbody id="studentBookingBody"></tbody></table></div>
+    </section>
+
+    <section>
+      <div class="section-head"><h2 class="card-title">Recent Campus Events</h2></div>
+      <div class="event-mini-grid" id="studentEventGrid"></div>
+    </section>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

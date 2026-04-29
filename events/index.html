@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFlow - Events</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F3864'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='34' fill='white'%3ECF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body id="eventsPage">
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">CampusFlow<small>Smart Campus Resource & Facility Manager</small></div>
+      <button id="hamburgerBtn" class="hamburger">Menu</button>
+      <div id="navLinks" class="nav-links"><a class="nav-link" href="../dashboard/student.html">Dashboard</a><a class="nav-link active" href="index.html">Events</a></div>
+      <div class="navbar-right"><span id="roleBadge" class="role-badge">Role</span><button class="btn btn-danger" onclick="logout()">Logout</button></div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="flex-between mb-4"><h1 class="page-title">Campus Event Calendar</h1><button id="postEventBtn" class="btn btn-primary">Post Event</button></div>
+    <div class="flex gap-3 mb-3"><button id="toggleCalendar" class="tab-btn active">Calendar View</button><button id="toggleList" class="tab-btn">List View</button><select id="eventCategoryFilter" class="w-auto"><option>All</option><option>Cultural</option><option>Technical</option><option>Sports</option><option>Seminar</option><option>Workshop</option></select></div>
+
+    <section id="calendarView" class="grid-2">
+      <div>
+        <h2 id="calendarMonthTitle" class="card-title mb-3"></h2>
+        <div id="calendarGrid" class="grid calendar-grid"></div>
+      </div>
+      <aside id="dayEventsPanel" class="card"><h3 class="card-title">Select a date</h3><p>Click any date with event dots to view details.</p></aside>
+    </section>
+
+    <section id="listView" class="hidden"><div id="eventsListWrap" class="grid-3"></div></section>
+  </main>
+
+  <div id="postEventModal" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal('postEventModal')">x</button><h3 class="card-title">Post Event</h3><form id="postEventForm" class="grid gap-3 mt-3"><div class="form-group"><label for="eventTitle">Event Title</label><input id="eventTitle" type="text" /></div><div class="form-group"><label for="eventDescription">Description</label><textarea id="eventDescription" rows="3"></textarea></div><div class="form-group"><label for="eventCategory">Category</label><select id="eventCategory"><option>Cultural</option><option>Technical</option><option>Sports</option><option>Seminar</option><option>Workshop</option></select></div><div class="form-group"><label for="eventVenue">Venue</label><input id="eventVenue" type="text" /></div><div class="grid-2"><div class="form-group"><label for="eventDate">Date</label><input id="eventDate" type="date" /></div><div class="form-group"><label for="eventTime">Time</label><input id="eventTime" type="time" /></div></div><div class="form-group"><label for="expectedAttendees">Expected Attendees</label><input id="expectedAttendees" type="number" min="1" /></div><div class="form-group"><label for="eventPoster">Poster Upload</label><input id="eventPoster" type="file" accept="image/*" /></div><button class="btn btn-success" type="submit">Post Event</button></form></div></div>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/events.js"></script>
+</body>
+</html>

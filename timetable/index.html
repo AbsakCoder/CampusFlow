@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CampusFlow - Timetable</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231F3864'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-size='34' fill='white'%3ECF%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar-inner">
+      <div class="brand">CampusFlow<small>Smart Campus Resource & Facility Manager</small></div>
+      <button id="hamburgerBtn" class="hamburger">Menu</button>
+      <div id="navLinks" class="nav-links"><a class="nav-link" href="../dashboard/faculty.html">Dashboard</a><a class="nav-link active" href="index.html">Timetable</a></div>
+      <div class="navbar-right"><span id="roleBadge" class="role-badge">Role</span><button class="btn btn-danger" onclick="logout()">Logout</button></div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="page-title mb-4">Weekly Timetable</h1>
+    <div class="grid-2 mb-4"><div class="form-group"><label for="ttBlock">Block</label><select id="ttBlock"><option>CSIT Block</option><option>K.P. Nautiyal Block</option></select></div><div class="form-group"><label for="ttDepartment">Department / Section</label><select id="ttDepartment"><option>CSE</option></select></div></div>
+
+    <section class="card">
+      <div class="table-wrap"><table><thead><tr><th>Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr></thead><tbody id="timetableBody"></tbody></table></div>
+    </section>
+
+    <section class="card mt-4">
+      <h2 class="card-title">CSV Upload</h2>
+      <div class="grid-2"><div class="form-group"><label for="timetableCsv">Upload CSV</label><input id="timetableCsv" type="file" accept=".csv" /></div><div class="form-group"><label>Actions</label><div class="flex gap-3"><button id="uploadTimetableBtn" class="btn btn-primary">Upload Timetable</button><a class="btn btn-light" href="#" download="sample_timetable.csv">Sample CSV Download</a></div></div></div>
+    </section>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
