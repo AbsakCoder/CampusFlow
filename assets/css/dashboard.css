@@ -1,0 +1,135 @@
+/* CampusFlow Dashboard Styles */
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 78px;
+  background: #fff;
+  border: 1px solid #d7e2ef;
+  border-radius: 14px;
+  padding: 0.9rem;
+  box-shadow: 0 10px 20px rgba(20, 40, 70, 0.08);
+}
+
+.sidebar a {
+  display: block;
+  border-radius: 10px;
+  padding: 0.62rem 0.72rem;
+  color: #20395f;
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background: #edf4fc;
+  color: #1a4f83;
+}
+
+.main-panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid #d7e2ef;
+  border-left: 6px solid var(--color-secondary);
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(20, 40, 70, 0.08);
+  padding: 0.95rem;
+}
+
+.stat-card h3 {
+  font-size: 1.7rem;
+  color: #1e3f6b;
+}
+
+.stat-card p {
+  font-size: 0.9rem;
+}
+
+.stat-card.free { border-left-color: var(--color-free); }
+.stat-card.warn { border-left-color: var(--color-booked); }
+.stat-card.danger { border-left-color: var(--color-occupied); }
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.event-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.event-mini-card {
+  background: #fff;
+  border: 1px solid #d7e2ef;
+  border-radius: 12px;
+  padding: 0.8rem;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.quick-action {
+  background: linear-gradient(140deg, #ffffff 0%, #eaf4ff 100%);
+  border: 1px solid #d6e3f2;
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 96px;
+}
+
+.quick-action h4 {
+  color: #184475;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.tt-cell {
+  border-radius: 8px;
+  padding: 0.4rem;
+  min-height: 64px;
+}
+
+.tt-cse {
+  background: #e8f3ff;
+  border: 1px solid #afd0f2;
+}
+
+.tt-mech {
+  background: #fff2e8;
+  border: 1px solid #f2c9a6;
+}
+
+.tt-mgmt {
+  background: #e8f8ee;
+  border: 1px solid #b5dfc3;
+}
+
+.tt-empty {
+  background: #f2f5fa;
+  border: 1px dashed #c5d2e3;
+  text-align: center;
+  color: #7a8ca3;
+  font-size: 1rem;
+}

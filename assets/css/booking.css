@@ -1,0 +1,97 @@
+/* CampusFlow Booking Styles */
+
+.progress-wrap {
+  background: #fff;
+  border: 1px solid #d7e2ef;
+  border-radius: 14px;
+  padding: 0.8rem;
+}
+
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  color: #405b7f;
+}
+
+.progress-track {
+  height: 8px;
+  background: #e3ebf5;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 33.33%;
+  background: linear-gradient(90deg, #2C5F8A, #1F3864);
+  transition: width 220ms ease;
+}
+
+.booking-step {
+  display: none;
+}
+
+.booking-step.active {
+  display: block;
+}
+
+.select-room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.select-room-card {
+  border: 1px solid #d7e2ef;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.8rem;
+}
+
+.recurring-preview {
+  border: 1px dashed #8eb4d8;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-size: 0.86rem;
+  background: #f4f9ff;
+}
+
+.summary-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #d6e0ee;
+  padding-bottom: 0.32rem;
+}
+
+.step-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.tab-btn {
+  border: 1px solid #cad8e8;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.42rem 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab-btn.active {
+  background: #dfeefe;
+  border-color: #8db3de;
+}

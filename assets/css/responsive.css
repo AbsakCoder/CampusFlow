@@ -1,0 +1,103 @@
+/* CampusFlow Responsive Styles */
+
+@media (max-width: 1024px) {
+  .room-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filters-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats-grid,
+  .quick-actions,
+  .event-mini-grid,
+  .select-room-grid,
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .page-title {
+    font-size: 1.35rem;
+  }
+
+  .hamburger {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: #1F3864;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .navbar-inner {
+    flex-wrap: wrap;
+  }
+
+  .navbar-right {
+    margin-left: auto;
+  }
+
+  .room-grid,
+  .grid-2,
+  .grid-3,
+  .stats-grid,
+  .quick-actions,
+  .event-mini-grid,
+  .select-room-grid,
+  .filters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  #sidebarToggle {
+    display: inline-flex !important;
+  }
+
+  .sidebar.show {
+    display: block;
+    position: static;
+    margin-bottom: 0.8rem;
+  }
+
+  .table-wrap table {
+    min-width: 620px;
+  }
+
+  .hero-actions,
+  .step-actions,
+  .flex-between {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
